@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from sqlite3 import Connection
 
 import streamlit
@@ -44,8 +45,10 @@ def main() -> None:
 
     streamlit.title(body="CS Dept. Course Scheduler Utility")
 
-    projectFolder = "../"  # Modify this path as necessary
-    existingFiles = [f for f in os.listdir(projectFolder) if f.endswith(".xlsx")]  # noqa: E501
+    projectFolder = Path("./").absolute()  # Modify this path as necessary
+    existingFiles = [
+        Path(f).absolute() for f in os.listdir(projectFolder) if f.endswith(".xlsx")
+    ]  # noqa: E501
 
     streamlit.write("### Select an existing file or upload a new one")
     selectedFile = streamlit.selectbox(
