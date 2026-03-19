@@ -118,7 +118,7 @@ def readExcelToDB(uf: UploadedFile, dbPath: str = ":memory:") -> Connection:
     :return: The SQLite database connection.
     :rtype: Connection
     """
-    conn: Connection = connect(database=dbPath)
+    conn: Connection = connect(database=dbPath, check_same_thread=False)
 
     df: DataFrame = read_excel(io=uf, engine="openpyxl")
 
