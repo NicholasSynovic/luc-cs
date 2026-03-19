@@ -69,6 +69,8 @@ class ScheduleDensity(Analytic):
         row: Series
         for _, row in courseSchedule.iterrows():
             pattern: str = row["TRAD MEETING PATTERN"]
+            if pattern == "No Meeting Pattern":
+                continue
 
             startTime: datetime = pandas.to_datetime(
                 arg=row["CLASS START TIME"],
@@ -87,6 +89,9 @@ class ScheduleDensity(Analytic):
 
             day: str
             for day in pattern:
+                # print(day)
+                continue
+
                 interval: Interval = Interval(
                     begin=startMinutes,
                     end=endMinutes,
