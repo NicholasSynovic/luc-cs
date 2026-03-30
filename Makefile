@@ -9,3 +9,6 @@ create-dev:
 	pre-commit autoupdate
 	uv sync
 	uv build
+
+run:
+	.venv/bin/streamlit run cs/app.py
