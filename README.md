@@ -20,7 +20,6 @@ enrollment, assignments, scheduling patterns, and potential issues.
 - [Architecture Overview](#architecture-overview)
 - [Development Checks](#development-checks)
 - [Testing](#testing)
-- [How to Cite](#how-to-cite)
 - [License](#license)
 
 ## What This Project Is
@@ -220,10 +219,6 @@ When tests are added, run:
 ```bash
 uv run pytest
 ```
-
-## How to Cite
-
-See [CITATION.cff](CITATION.cff) for citation information.
 
 ## License
 
